@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import CafesPage from './pages/CafesPage';
 import AssinaturasPage from './pages/AssinaturasPage';
+import CoursesPage from './pages/CoursesPage';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -41,6 +42,7 @@ function AppContent() {
     home: <HomePage onNavigate={handleNavigate} onOpenProduct={handleOpenProduct} />,
     cafes: <CafesPage onOpenProduct={handleOpenProduct} />,
     assinaturas: <AssinaturasPage />,
+    cursos: <CoursesPage onOpenProduct={handleOpenProduct} />,
   };
 
   return (
