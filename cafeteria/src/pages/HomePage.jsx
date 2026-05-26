@@ -1,10 +1,10 @@
 import { Box, Typography, Button, Container, Grid } from "@mui/material";
 import ProductCard from "../components/ProductCard";
 import { coffees } from "../data";
-import GraosSelecionadosImg from "../img/cafe_serrano.png";
-import TorraArtesanalImg from "../img/cafe_mantiquera.png";
-import EntregaRapidaImg from "../img/cafe_chapada.png";
-import SatisfacaoImg from "../img/cafe_mogiana.png";
+import GraosSelecionadosImg from "../img/escolhido.png";
+import TorraArtesanalImg from "../img/artesanal.png";
+import EntregaRapidaImg from "../img/entrega.png";
+import SatisfacaoImg from "../img/seguro.png";
 
 const HERO_BADGES = [
   {
@@ -172,8 +172,8 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                   border: "1px solid rgba(196,146,42,0.4)",
                   objectFit: "cover",
                   flexShrink: 0,
+                  backgroundColor: "rgba(196,146,42,0.2)",
                 }}
-                onError={(e) => { e.target.style.display = 'none'; }}
               />
               <Box>
                 <Typography
