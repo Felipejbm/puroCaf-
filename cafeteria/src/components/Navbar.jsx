@@ -19,7 +19,7 @@ const NAV_LINKS = [
   { label: "ASSINATURAS", page: "assinaturas" },
   { label: "CURSOS", page: "cursos" },
   { label: "BLOG", page: "blog" },
-  { label: "SOBRE", page: "home" },
+  { label: "SOBRE", page: "sobre" },
   { label: "CONTATO", page: "home" },
 ];
 

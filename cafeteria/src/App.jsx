@@ -12,6 +12,7 @@ import CafesPage from './pages/CafesPage';
 import AssinaturasPage from './pages/AssinaturasPage';
 import CoursesPage from './pages/CoursesPage';
 import BlogPage from './pages/BlogPage';
+import AboutPage from './pages/AboutPage';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -45,6 +46,7 @@ function AppContent() {
     assinaturas: <AssinaturasPage />,
     cursos: <CoursesPage onOpenProduct={handleOpenProduct} />,
     blog: <BlogPage />,
+    sobre: <AboutPage />,
   };
 
   return (
