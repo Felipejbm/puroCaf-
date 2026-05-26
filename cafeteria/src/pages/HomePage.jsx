@@ -1,17 +1,29 @@
 import { Box, Typography, Button, Container, Grid } from "@mui/material";
 import ProductCard from "../components/ProductCard";
 import { coffees } from "../data";
+import GraosSelecionadosImg from "../img/cafe_serrano.png";
+import TorraArtesanalImg from "../img/cafe_mantiquera.png";
+import EntregaRapidaImg from "../img/cafe_chapada.png";
+import SatisfacaoImg from "../img/cafe_mogiana.png";
 
 const HERO_BADGES = [
   {
-    icon: "🌍",
+    icon: GraosSelecionadosImg,
     title: "Grãos Selecionados",
     sub: "De diversas partes do mundo",
   },
-  { icon: "🔥", title: "Torra Artesanal", sub: "Feita em pequenos lotes" },
-  { icon: "🚚", title: "Entrega Rápida", sub: "Para todo o Brasil" },
+  { 
+    icon: TorraArtesanalImg, 
+    title: "Torra Artesanal", 
+    sub: "Feita em pequenos lotes" 
+  },
+  { 
+    icon: EntregaRapidaImg, 
+    title: "Entrega Rápida", 
+    sub: "Para todo o Brasil" 
+  },
   {
-    icon: "✅",
+    icon: SatisfacaoImg,
     title: "Satisfação Garantida",
     sub: "Ou seu dinheiro de volta",
   },
@@ -151,19 +163,18 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
               }}
             >
               <Box
+                component="img"
+                src={icon}
+                alt={title}
                 sx={{
                   width: 36,
                   height: 36,
                   border: "1px solid rgba(196,146,42,0.4)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 18,
+                  objectFit: "cover",
                   flexShrink: 0,
                 }}
-              >
-                {icon}
-              </Box>
+                onError={(e) => { e.target.style.display = 'none'; }}
+              />
               <Box>
                 <Typography
                   sx={{

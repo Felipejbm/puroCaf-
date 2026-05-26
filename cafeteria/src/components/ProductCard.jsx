@@ -31,6 +31,9 @@ export default function ProductCard({ product, onOpen }) {
           alignItems: 'center',
           justifyContent: 'center',
           overflow: 'hidden',
+          boxShadow: '0 8px 24px rgba(196,146,42,0.1)',
+          transition: 'box-shadow 0.3s',
+          '&:hover': { boxShadow: '0 14px 32px rgba(196,146,42,0.15)' },
         }}
       >
         <Box
@@ -38,8 +41,8 @@ export default function ProductCard({ product, onOpen }) {
           src={product.img}
           alt={product.name}
           sx={{
-            width: 110,
-            height: 140,
+            width: '90%',
+            height: '90%',
             objectFit: 'cover',
             transition: 'transform 0.3s',
             '.MuiCard-root:hover &': { transform: 'scale(1.06)' },

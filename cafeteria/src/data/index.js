@@ -7,7 +7,7 @@ export const coffees = [{
         process: 'Natural',
         score: 84,
         price: 54.90,
-        img: 'https://images.unsplash.com/photo-1610889556528-9a770e32642f?w=300&q=80',
+        img: '../../src/img/cafe_serrano.png',
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ export const coffees = [{
         process: 'Lavado',
         score: 86,
         price: 59.90,
-        img: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=300&q=80',
+        img: '../../src/img/cafe_mantiquera.png',
     },
     {
         id: 3,
@@ -29,7 +29,7 @@ export const coffees = [{
         process: 'Natural',
         score: 88,
         price: 64.90,
-        img: 'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=300&q=80',
+        img: '../../src/img/cafe_chapada.png',
     },
     {
         id: 4,
@@ -40,7 +40,7 @@ export const coffees = [{
         process: 'Despolpado',
         score: 85,
         price: 52.90,
-        img: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=300&q=80',
+        img: '../../src/img/cafe_mogiana.png',
     },
     {
         id: 5,
@@ -179,8 +179,7 @@ export const courses = [{
     },
 ];
 
-export const blogPosts = [
-    {
+export const blogPosts = [{
         id: 1,
         title: 'A Jornada do Café: Da Planta ao Seu Copo',
         category: 'Origem',
