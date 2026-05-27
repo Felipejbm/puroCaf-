@@ -13,6 +13,7 @@ import AssinaturasPage from './pages/AssinaturasPage';
 import CoursesPage from './pages/CoursesPage';
 import BlogPage from './pages/BlogPage';
 import AboutPage from './pages/AboutPage';
+import TestimonialsPage from './pages/TestimonialsPage';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -47,6 +48,7 @@ function AppContent() {
     cursos: <CoursesPage onOpenProduct={handleOpenProduct} />,
     blog: <BlogPage />,
     sobre: <AboutPage />,
+    testimonios: <TestimonialsPage />,
   };
 
   return (

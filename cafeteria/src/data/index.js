@@ -234,3 +234,69 @@ export const blogPosts = [{
         author: 'Roberto Alves',
     },
 ];
+
+export const testimonials = [
+    {
+        id: 1,
+        name: 'Juliana Martins',
+        rating: 5,
+        comment: 'Os melhores cafés que já provei! A qualidade dos grãos é incrível e o atendimento é impecável. Virei cliente fiel do clube!',
+        avatar: 'J',
+    },
+    {
+        id: 2,
+        name: 'Carlos Souza',
+        rating: 5,
+        comment: 'A experiência de degustação foi transformadora. Os cursos online são excelentes e aprendi técnicas que uso todos os dias.',
+        avatar: 'C',
+    },
+    {
+        id: 3,
+        name: 'Marina Santos',
+        rating: 5,
+        comment: 'Meu kit de café chegou rápido e bem embalado. A variedade é impressionante e cada grão tem sua própria história.',
+        avatar: 'M',
+    },
+    {
+        id: 4,
+        name: 'Roberto Alves',
+        rating: 5,
+        comment: 'Café specialty de verdade! Conseguem trazer grãos exclusivos que não encontro em lugar nenhum. Muito satisfeito.',
+        avatar: 'R',
+    },
+    {
+        id: 5,
+        name: 'Ana Costa',
+        rating: 5,
+        comment: 'O atendimento é personalizado e eles realmente entendem de café. A assinatura mensal é um tesouro para quem ama café.',
+        avatar: 'A',
+    },
+    {
+        id: 6,
+        name: 'Felipe Oliveira',
+        rating: 5,
+        comment: 'Workshop online sobre latte art foi incrível! Instrutor muito didático. Recomendo para quem quer aprender de verdade.',
+        avatar: 'F',
+    },
+    {
+        id: 7,
+        name: 'Beatriz Silva',
+        rating: 5,
+        comment: 'A qualidade é consistente. Já tentei vários cafés e todos superaram minhas expectativas. Voltei a apreciar café como nunca.',
+        avatar: 'B',
+    },
+    {
+        id: 8,
+        name: 'Lucas Pereira',
+        rating: 5,
+        comment: 'Excelente rapport entre preço e qualidade. O Blog tem conteúdo muito rico. Virei fã da marca!',
+        avatar: 'L',
+    },
+    {
+        id: 9,
+        name: 'Fernanda Rocha',
+        rating: 5,
+        comment: 'Montei meu kit personalizado e ficou perfeito! Chegou em 3 dias. Já é a segunda vez que compro.',
+        avatar: 'F',
+    },
+];

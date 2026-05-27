@@ -251,7 +251,6 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                     border: "1px solid rgba(245,237,214,0.2)",
                     objectFit: "cover",
                     flexShrink: 0,
-                    backgroundColor: "rgba(196,146,42,0.1)",
                   }}
                 />
                 <Box>
@@ -311,6 +310,7 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                 O que nossos clientes dizem
               </Typography>
               <Button
+                onClick={() => onNavigate("testimonios")}
                 sx={{
                   color: "#8B4513",
                   fontSize: 11,
