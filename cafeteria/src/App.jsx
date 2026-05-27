@@ -48,7 +48,7 @@ function AppContent() {
     cursos: <CoursesPage onOpenProduct={handleOpenProduct} />,
     blog: <BlogPage />,
     sobre: <AboutPage />,
-    testimonios: <TestimonialsPage />,
+    testimonios: <TestimonialsPage onNavigate={handleNavigate} />,
   };
 
   return (

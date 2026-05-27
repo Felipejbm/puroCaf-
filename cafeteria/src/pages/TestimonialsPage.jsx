@@ -1,7 +1,7 @@
 import { Box, Typography, Grid, Card, CardContent } from '@mui/material';
 import { testimonials } from '../data';
 
-export default function TestimonialsPage() {
+export default function TestimonialsPage({ onNavigate }) {
   const getAvatarColor = (avatar) => {
     const colors = {
       'J': '#8B4513',
@@ -121,6 +121,7 @@ export default function TestimonialsPage() {
         </Typography>
         <Box
           component="button"
+          onClick={() => onNavigate("assinaturas")}
           sx={{
             bgcolor: '#F5EDD6',
             color: '#2C1A0E',
