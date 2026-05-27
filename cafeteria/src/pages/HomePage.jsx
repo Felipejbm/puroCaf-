@@ -5,6 +5,9 @@ import GraosSelecionadosImg from "../img/escolhido.png";
 import TorraArtesanalImg from "../img/artesanal.png";
 import EntregaRapidaImg from "../img/entrega.png";
 import SatisfacaoImg from "../img/seguro.png";
+import CursosImg from "../img/cafe_serrano.png";
+import AssinaturasImg from "../img/cafe_mantiquera.png";
+import KitImg from "../img/cafe_chapada.png";
 
 const HERO_BADGES = [
   {
@@ -31,25 +34,25 @@ const HERO_BADGES = [
 
 const SERVICES = [
   {
-    icon: "📚",
+    icon: CursosImg,
     title: "Cursos e Workshops",
     sub: "Aprenda com quem vive café",
     cta: "VER CURSOS →",
-    page: "home",
+    page: "cursos",
   },
   {
-    icon: "📦",
+    icon: AssinaturasImg,
     title: "Clube de Assinatura",
     sub: "Cafés exclusivos todo mês",
     cta: "CONHECER PLANOS →",
     page: "assinaturas",
   },
   {
-    icon: "🎁",
+    icon: KitImg,
     title: "Monte seu Kit",
     sub: "Personalize do seu jeito",
     cta: "MONTAR KIT →",
-    page: "home",
+    page: "cafes",
   },
 ];
 
@@ -172,7 +175,6 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                   border: "1px solid rgba(196,146,42,0.4)",
                   objectFit: "cover",
                   flexShrink: 0,
-                  backgroundColor: "rgba(196,146,42,0.2)",
                 }}
               />
               <Box>
@@ -234,32 +236,32 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
       </Box>
 
       {/* SERVICES DARK */}
-      <Box sx={{ bgcolor: "#2C1A0E", px: { xs: 3, md: 10 }, py: 6 }}>
-        <Grid container spacing={4}>
+      <Box sx={{ bgcolor: "#2C1A0E", px: { xs: 3, md: 10 }, py: 8 }}>
+        <Grid container spacing={4} justifyContent="center">
           {SERVICES.map(({ icon, title, sub, cta, page }) => (
             <Grid item xs={12} md={4} key={title}>
-              <Box sx={{ display: "flex", gap: 2 }}>
+              <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 2 }}>
                 <Box
+                  component="img"
+                  src={icon}
+                  alt={title}
                   sx={{
-                    width: 44,
-                    height: 44,
+                    width: 100,
+                    height: 100,
+                    borderRadius: 1,
+                    objectFit: "cover",
                     border: "1px solid rgba(245,237,214,0.2)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 20,
-                    flexShrink: 0,
+                    backgroundColor: "rgba(196,146,42,0.1)",
                   }}
-                >
-                  {icon}
-                </Box>
+                />
                 <Box>
                   <Typography
                     sx={{
                       color: "#F5EDD6",
                       fontWeight: 700,
-                      fontSize: 14,
-                      mb: 0.5,
+                      fontSize: 16,
+                      mb: 0.75,
+                      fontFamily: '"Playfair Display", serif',
                     }}
                   >
                     {title}
@@ -267,9 +269,10 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                   <Typography
                     sx={{
                       color: "#EDE0C4",
-                      fontSize: 12,
-                      opacity: 0.65,
-                      mb: 1,
+                      fontSize: 13,
+                      opacity: 0.7,
+                      mb: 1.5,
+                      lineHeight: 1.5,
                     }}
                   >
                     {sub}
