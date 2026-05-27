@@ -5,9 +5,9 @@ import GraosSelecionadosImg from "../img/escolhido.png";
 import TorraArtesanalImg from "../img/artesanal.png";
 import EntregaRapidaImg from "../img/entrega.png";
 import SatisfacaoImg from "../img/seguro.png";
-import CursosImg from "../img/cafe_serrano.png";
-import AssinaturasImg from "../img/cafe_mantiquera.png";
-import KitImg from "../img/cafe_chapada.png";
+import CursosImg from "../img/curso.png";
+import AssinaturasImg from "../img/assinatura.png";
+import KitImg from "../img/kit.png";
 
 const HERO_BADGES = [
   {
@@ -236,21 +236,21 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
       </Box>
 
       {/* SERVICES DARK */}
-      <Box sx={{ bgcolor: "#2C1A0E", px: { xs: 3, md: 10 }, py: 8 }}>
-        <Grid container spacing={4} justifyContent="center">
+      <Box sx={{ bgcolor: "#2C1A0E", px: { xs: 3, md: 10 }, py: 6 }}>
+        <Grid container spacing={4}>
           {SERVICES.map(({ icon, title, sub, cta, page }) => (
             <Grid item xs={12} md={4} key={title}>
-              <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 2 }}>
+              <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
                 <Box
                   component="img"
                   src={icon}
                   alt={title}
                   sx={{
-                    width: 100,
-                    height: 100,
-                    borderRadius: 1,
-                    objectFit: "cover",
+                    width: 44,
+                    height: 44,
                     border: "1px solid rgba(245,237,214,0.2)",
+                    objectFit: "cover",
+                    flexShrink: 0,
                     backgroundColor: "rgba(196,146,42,0.1)",
                   }}
                 />
@@ -259,9 +259,8 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                     sx={{
                       color: "#F5EDD6",
                       fontWeight: 700,
-                      fontSize: 16,
-                      mb: 0.75,
-                      fontFamily: '"Playfair Display", serif',
+                      fontSize: 14,
+                      mb: 0.5,
                     }}
                   >
                     {title}
@@ -269,10 +268,9 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                   <Typography
                     sx={{
                       color: "#EDE0C4",
-                      fontSize: 13,
-                      opacity: 0.7,
-                      mb: 1.5,
-                      lineHeight: 1.5,
+                      fontSize: 12,
+                      opacity: 0.65,
+                      mb: 1,
                     }}
                   >
                     {sub}
