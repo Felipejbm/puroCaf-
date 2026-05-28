@@ -1,6 +1,6 @@
 import {
   Card, CardContent, CardMedia, Box,
-  Typography, IconButton
+  Typography, IconButton, Chip
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useCart } from '../hooks/useCart';
@@ -9,17 +9,30 @@ function formatPrice(v) {
   return 'R$ ' + v.toFixed(2).replace('.', ',');
 }
 
-export default function ProductCard({ product, onOpen }) {
+export default function CourseCard({ course, onOpen }) {
   const { addToCart } = useCart();
 
   const handleAdd = (e) => {
     e.stopPropagation();
-    addToCart(product);
+    addToCart(course);
+  };
+
+  const getLevelColor = (level) => {
+    switch (level) {
+      case 'Iniciante':
+        return '#4CAF50';
+      case 'Intermediário':
+        return '#FFC107';
+      case 'Avançado':
+        return '#FF6B6B';
+      default:
+        return '#C4922A';
+    }
   };
 
   return (
     <Card
-      onClick={() => onOpen(product)}
+      onClick={() => onOpen(course)}
       sx={{ cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column' }}
     >
       <Box
@@ -31,23 +44,33 @@ export default function ProductCard({ product, onOpen }) {
           alignItems: 'center',
           justifyContent: 'center',
           overflow: 'hidden',
-          boxShadow: '0 8px 24px rgba(196,146,42,0.1)',
-          transition: 'box-shadow 0.3s',
-          '&:hover': { boxShadow: '0 14px 32px rgba(196,146,42,0.15)' },
+          position: 'relative',
         }}
       >
         <Box
           component="img"
-          src={product.img}
-          alt={product.name}
+          src={course.img}
+          alt={course.name}
           sx={{
-            width: '90%',
-            height: '90%',
+            width: '100%',
+            height: '100%',
             objectFit: 'cover',
             transition: 'transform 0.3s',
             '.MuiCard-root:hover &': { transform: 'scale(1.06)' },
           }}
           onError={(e) => { e.target.style.display = 'none'; }}
+        />
+        <Chip
+          label={course.level}
+          sx={{
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            bgcolor: getLevelColor(course.level),
+            color: '#fff',
+            fontWeight: 600,
+            fontSize: '11px',
+          }}
         />
       </Box>
 
@@ -56,13 +79,13 @@ export default function ProductCard({ product, onOpen }) {
           variant="h6"
           sx={{ fontFamily: '"Playfair Display", serif', fontSize: '15px', fontWeight: 600, mb: 0.5 }}
         >
-          {product.name}
+          {course.name}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '11px', mb: 0.25 }}>
-          Notas: {product.notes}
+          Por {course.instructor}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary', fontSize: '11px', fontStyle: 'italic', mb: 1.5 }}>
-          {product.roast}
+          ⏱ {course.duration}
         </Typography>
 
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -74,7 +97,7 @@ export default function ProductCard({ product, onOpen }) {
               color: 'primary.dark',
             }}
           >
-            {formatPrice(product.price)}
+            {formatPrice(course.price)}
           </Typography>
           <IconButton
             size="small"

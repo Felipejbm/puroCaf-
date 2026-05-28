@@ -17,9 +17,9 @@ const NAV_LINKS = [
   { label: "HOME", page: "home" },
   { label: "CAFÉS", page: "cafes" },
   { label: "ASSINATURAS", page: "assinaturas" },
-  { label: "CURSOS", page: "home" },
-  { label: "BLOG", page: "home" },
-  { label: "SOBRE", page: "home" },
+  { label: "CURSOS", page: "cursos" },
+  { label: "BLOG", page: "blog" },
+  { label: "SOBRE", page: "sobre" },
   { label: "CONTATO", page: "home" },
 ];
 
