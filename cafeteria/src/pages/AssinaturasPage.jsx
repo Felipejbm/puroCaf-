@@ -149,10 +149,10 @@ function PlanCard({ plan, isSemestral }) {
 }
 
 const FOOTER_ITEMS = [
-  { icon: "⏸️", label: "Pause quando quiser" },
-  { icon: "🚚", label: "Frete grátis sempre" },
-  { icon: "☕", label: "Cafés exclusivos" },
-  { icon: "✕", label: "Cancelamento fácil" },
+  { icon: "", label: "Pause quando quiser" },
+  { icon: "", label: "Frete grátis sempre" },
+  { icon: "", label: "Cafés exclusivos" },
+  { icon: "", label: "Cancelamento fácil" },
 ];
 
 export default function AssinaturasPage({ onNavigate }) {

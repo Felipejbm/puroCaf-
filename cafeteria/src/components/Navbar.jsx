@@ -20,7 +20,7 @@ const NAV_LINKS = [
   { label: "CURSOS", page: "cursos" },
   { label: "BLOG", page: "blog" },
   { label: "SOBRE", page: "sobre" },
-  { label: "CONTATO", page: null },
+  { label: "COMENTÁRIOS", page: "testimonios" },
 ];
 
 function LogoSVG() {
@@ -127,17 +127,23 @@ export default function Navbar({ currentPage, onNavigate }) {
 
         {/* Actions */}
         <Box sx={{ display: "flex", gap: 0.5, ml: "auto" }}>
-          {[SearchIcon, PersonOutlineIcon].map((Icon, i) => (
-            <IconButton
-              key={i}
-              sx={{
-                color: "rgba(245,237,214,0.8)",
-                "&:hover": { color: "#F5EDD6", bgcolor: "transparent" },
-              }}
-            >
-              <Icon fontSize="small" />
-            </IconButton>
-          ))}
+          <IconButton
+            sx={{
+              color: "rgba(245,237,214,0.8)",
+              "&:hover": { color: "#F5EDD6", bgcolor: "transparent" },
+            }}
+          >
+         
+          </IconButton>
+          <IconButton
+            onClick={() => onNavigate("login")}
+            sx={{
+              color: "rgba(245,237,214,0.8)",
+              "&:hover": { color: "#F5EDD6", bgcolor: "transparent" },
+            }}
+          >
+            <PersonOutlineIcon fontSize="small" />
+          </IconButton>
           <IconButton
             onClick={() => setCartOpen(true)}
             sx={{

@@ -1,17 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-  width: 100%;
-  min-height: 100%;
+    width: 100%;
+    min-height: 100%;
 }
 
 body {
-  overflow-x: hidden;
-  background: #faf6ee;
+    overflow-x: hidden;
+    background: radial-gradient(circle at top, #fffaf0 0%, #f7f1e7 40%, #efe4d8 100%);
+    font-family: 'Lato', sans-serif;
+    color: #382214;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }

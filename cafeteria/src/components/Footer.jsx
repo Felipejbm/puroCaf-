@@ -9,6 +9,8 @@ const NAV_COLS = [
       { label: "Assinaturas", page: "assinaturas" },
       { label: "Cursos", page: "cursos" },
       { label: "Blog", page: "blog" },
+      { label: "Sobre", page: "sobre" },
+      { label: "Comentários", page: "testimonios" },
     ],
   },
   {

@@ -7,6 +7,7 @@ import CartDrawer from "./components/CartDrawer";
 import ProductPanel from "./components/ProductPanel";
 import Notification from "./components/Notification";
 import Footer from "./components/Footer";
+import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import CafesPage from "./pages/CafesPage";
 import AssinaturasPage from "./pages/AssinaturasPage";
@@ -15,6 +16,10 @@ import BlogPage from "./pages/BlogPage";
 import AboutPage from "./pages/AboutPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import TestimonialsPage from "./pages/TestimonialsPage";
+import ShopPage from "./pages/ShopPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import AdminDashboardPage from "./pages/AdminDashboardPage";
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -29,6 +34,11 @@ function AppContent() {
 
   const handleNavigate = useCallback((page) => {
     setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const handleLogin = useCallback(() => {
+    setCurrentPage("home");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
@@ -59,15 +69,9 @@ function AppContent() {
   );
 
   const pages = {
-    home: (
-      <HomePage onNavigate={handleNavigate} onOpenProduct={handleOpenProduct} />
-    ),
-    cafes: (
-      <CafesPage
-        onNavigate={handleNavigate}
-        onOpenProduct={handleOpenProduct}
-      />
-    ),
+    login: <LoginPage onLogin={handleLogin} />,
+    home: <HomePage onNavigate={handleNavigate} onOpenProduct={handleOpenProduct} />,
+    cafes: <ShopPage onOpenProduct={handleOpenProduct} />,
     assinaturas: <AssinaturasPage onNavigate={handleNavigate} />,
     cursos: (
       <CoursesPage
@@ -75,9 +79,7 @@ function AppContent() {
         onOpenProduct={handleOpenProduct}
       />
     ),
-    blog: (
-      <BlogPage onNavigate={handleNavigate} onOpenPost={handleOpenBlogPost} />
-    ),
+    blog: <BlogPage onNavigate={handleNavigate} onOpenPost={handleOpenBlogPost} />,
     blogPost: selectedBlogPost ? (
       <BlogPostPage post={selectedBlogPost} onNavigate={handleNavigate} />
     ) : (
@@ -85,6 +87,9 @@ function AppContent() {
     ),
     sobre: <AboutPage onNavigate={handleNavigate} />,
     testimonios: <TestimonialsPage onNavigate={handleNavigate} />,
+    cart: <CartPage onNavigate={handleNavigate} />,
+    checkout: <CheckoutPage onNavigate={handleNavigate} />,
+    dashboard: <AdminDashboardPage />,
   };
 
   return (
@@ -114,12 +119,14 @@ function AppContent() {
 
       <Footer onNavigate={handleNavigate} />
 
-      <CartDrawer />
+      <CartDrawer
+        onViewCart={() => handleNavigate("cart")}
+        onCheckout={() => handleNavigate("checkout")}
+      />
       <ProductPanel
         product={selectedProduct}
         open={panelOpen}
         onClose={handleClosePanel}
-        onAddToCart={handleAddToCart}
       />
       <Notification
         open={notification.open}

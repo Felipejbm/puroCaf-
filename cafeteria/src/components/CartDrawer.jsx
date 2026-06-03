@@ -119,7 +119,7 @@ function CartItem({ item }) {
   );
 }
 
-export default function CartDrawer() {
+export default function CartDrawer({ onViewCart, onCheckout }) {
   const { cart, subtotal, cartOpen, setCartOpen } = useCart();
 
   return (
@@ -202,6 +202,10 @@ export default function CartDrawer() {
             bgcolor: "#8B4513",
             "&:hover": { bgcolor: "#5C3317" },
           }}
+          onClick={() => {
+            setCartOpen(false);
+            onCheckout?.();
+          }}
         >
           Finalizar Compra
         </Button>
@@ -214,8 +218,12 @@ export default function CartDrawer() {
             color: "#7A5C3A",
             "&:hover": { borderColor: "#8B4513", color: "#8B4513" },
           }}
+          onClick={() => {
+            setCartOpen(false);
+            onViewCart?.();
+          }}
         >
-          Ver Carrinho
+          Ver meu carrinho completo
         </Button>
       </Box>
     </Drawer>

@@ -15,7 +15,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 
-export default function LoginPage({ onNavigate }) {
+export default function LoginPage({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -255,7 +255,7 @@ export default function LoginPage({ onNavigate }) {
                 },
               }}
               onClick={() => {
-                // Visual only - no actual login logic
+                onLogin?.();
               }}
             >
               Entrar
@@ -264,13 +264,12 @@ export default function LoginPage({ onNavigate }) {
             {/* Signup Link */}
             <Box sx={{ textAlign: "center" }}>
               <Typography variant="body2" sx={{ color: "#666", mb: 1 }}>
-                Não tem uma conta?{" "}
+                Não tem uma conta?{' '}
                 <Link
                   component="button"
                   variant="body2"
                   onClick={(e) => {
                     e.preventDefault();
-                    // Visual only
                   }}
                   sx={{
                     color: "#C4922A",
