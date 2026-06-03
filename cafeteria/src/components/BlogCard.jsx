@@ -1,28 +1,38 @@
-import { Card, CardContent, Box, Typography, Chip } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  Box,
+  Typography,
+  Chip,
+  ButtonBase,
+} from "@mui/material";
 
-export default function BlogCard({ post }) {
+export default function BlogCard({ post, onClick }) {
   const getCategoryColor = (category) => {
     const colors = {
-      'Origem': '#C4922A',
-      'Técnica': '#FF6B6B',
-      'Educação': '#4CAF50',
-      'Receita': '#FFC107',
-      'Saúde': '#2196F3',
+      Origem: "#C4922A",
+      Técnica: "#FF6B6B",
+      Educação: "#4CAF50",
+      Receita: "#FFC107",
+      Saúde: "#2196F3",
     };
-    return colors[category] || '#C4922A';
+    return colors[category] || "#C4922A";
   };
 
   return (
     <Card
+      component={ButtonBase}
+      onClick={onClick}
+      focusRipple
       sx={{
-        cursor: 'pointer',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-        '&:hover': {
-          transform: 'translateY(-4px)',
-          boxShadow: '0 8px 24px rgba(196,146,42,0.15)',
+        cursor: onClick ? "pointer" : "default",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        transition: "transform 0.3s, box-shadow 0.3s",
+        "&:hover": {
+          transform: onClick ? "translateY(-4px)" : "none",
+          boxShadow: onClick ? "0 8px 24px rgba(196,146,42,0.15)" : "none",
         },
       }}
     >
@@ -30,8 +40,8 @@ export default function BlogCard({ post }) {
       <Box
         sx={{
           height: 200,
-          overflow: 'hidden',
-          position: 'relative',
+          overflow: "hidden",
+          position: "relative",
         }}
       >
         <Box
@@ -39,39 +49,41 @@ export default function BlogCard({ post }) {
           src={post.img}
           alt={post.title}
           sx={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            transition: 'transform 0.3s',
-            '.MuiCard-root:hover &': { transform: 'scale(1.05)' },
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            transition: "transform 0.3s",
+            ".MuiCard-root:hover &": { transform: "scale(1.05)" },
           }}
-          onError={(e) => { e.target.style.display = 'none'; }}
+          onError={(e) => {
+            e.target.style.display = "none";
+          }}
         />
         <Chip
           label={post.category}
           sx={{
-            position: 'absolute',
+            position: "absolute",
             top: 12,
             left: 12,
             bgcolor: getCategoryColor(post.category),
-            color: '#fff',
+            color: "#fff",
             fontWeight: 600,
-            fontSize: '11px',
+            fontSize: "11px",
           }}
         />
       </Box>
 
       {/* Content */}
-      <CardContent sx={{ flex: 1, p: 2.5, '&:last-child': { pb: 2.5 } }}>
+      <CardContent sx={{ flex: 1, p: 2.5, "&:last-child": { pb: 2.5 } }}>
         <Typography
           variant="h6"
           sx={{
             fontFamily: '"Playfair Display", serif',
-            fontSize: '16px',
+            fontSize: "16px",
             fontWeight: 600,
             mb: 1,
             lineHeight: 1.4,
-            color: '#2C1A0E',
+            color: "#2C1A0E",
           }}
         >
           {post.title}
@@ -80,8 +92,8 @@ export default function BlogCard({ post }) {
         <Typography
           variant="body2"
           sx={{
-            color: 'text.secondary',
-            fontSize: '12px',
+            color: "text.secondary",
+            fontSize: "12px",
             mb: 1.5,
             lineHeight: 1.6,
           }}
@@ -89,11 +101,25 @@ export default function BlogCard({ post }) {
           {post.excerpt}
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography sx={{ fontSize: '11px', color: 'text.secondary', fontStyle: 'italic' }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "11px",
+              color: "text.secondary",
+              fontStyle: "italic",
+            }}
+          >
             {post.date}
           </Typography>
-          <Typography sx={{ fontSize: '11px', color: '#C4922A', fontWeight: 600 }}>
+          <Typography
+            sx={{ fontSize: "11px", color: "#C4922A", fontWeight: 600 }}
+          >
             {post.author}
           </Typography>
         </Box>

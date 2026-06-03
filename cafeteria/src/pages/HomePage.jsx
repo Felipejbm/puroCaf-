@@ -15,15 +15,15 @@ const HERO_BADGES = [
     title: "Grãos Selecionados",
     sub: "De diversas partes do mundo",
   },
-  { 
-    icon: TorraArtesanalImg, 
-    title: "Torra Artesanal", 
-    sub: "Feita em pequenos lotes" 
+  {
+    icon: TorraArtesanalImg,
+    title: "Torra Artesanal",
+    sub: "Feita em pequenos lotes",
   },
-  { 
-    icon: EntregaRapidaImg, 
-    title: "Entrega Rápida", 
-    sub: "Para todo o Brasil" 
+  {
+    icon: EntregaRapidaImg,
+    title: "Entrega Rápida",
+    sub: "Para todo o Brasil",
   },
   {
     icon: SatisfacaoImg,
@@ -154,7 +154,7 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
             flexWrap: "wrap",
           }}
         >
-          {HERO_BADGES.map(({ icon, title, sub }) => (
+          {HERO_BADGES.map(({ icon, title, sub }, index) => (
             <Box
               key={title}
               sx={{
@@ -163,6 +163,18 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
                 gap: 1.5,
                 flex: 1,
                 minWidth: 220,
+                animation: `slideInLeft 0.6s ease both`,
+                animationDelay: `${index * 0.1}s`,
+                "@keyframes slideInLeft": {
+                  from: {
+                    opacity: 0,
+                    transform: "translateX(-20px)",
+                  },
+                  to: {
+                    opacity: 1,
+                    transform: "translateX(0)",
+                  },
+                },
               }}
             >
               <Box
@@ -227,8 +239,28 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
           </Button>
         </Box>
         <Grid container spacing={2.5}>
-          {coffees.slice(0, 4).map((product) => (
-            <Grid item xs={12} sm={6} md={3} key={product.id}>
+          {coffees.slice(0, 4).map((product, index) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={3}
+              key={product.id}
+              sx={{
+                animation: `fadeUp 0.6s ease both`,
+                animationDelay: `${index * 0.15}s`,
+                "@keyframes fadeUp": {
+                  from: {
+                    opacity: 0,
+                    transform: "translateY(20px)",
+                  },
+                  to: {
+                    opacity: 1,
+                    transform: "translateY(0)",
+                  },
+                },
+              }}
+            >
               <ProductCard product={product} onOpen={onOpenProduct} />
             </Grid>
           ))}
@@ -238,8 +270,27 @@ export default function HomePage({ onNavigate, onOpenProduct }) {
       {/* SERVICES DARK */}
       <Box sx={{ bgcolor: "#2C1A0E", px: { xs: 3, md: 10 }, py: 6 }}>
         <Grid container spacing={4}>
-          {SERVICES.map(({ icon, title, sub, cta, page }) => (
-            <Grid item xs={12} md={4} key={title}>
+          {SERVICES.map(({ icon, title, sub, cta, page }, index) => (
+            <Grid
+              item
+              xs={12}
+              md={4}
+              key={title}
+              sx={{
+                animation: `slideInUp 0.6s ease both`,
+                animationDelay: `${index * 0.1}s`,
+                "@keyframes slideInUp": {
+                  from: {
+                    opacity: 0,
+                    transform: "translateY(20px)",
+                  },
+                  to: {
+                    opacity: 1,
+                    transform: "translateY(0)",
+                  },
+                },
+              }}
+            >
               <Box sx={{ display: "flex", gap: 2, alignItems: "flex-start" }}>
                 <Box
                   component="img"

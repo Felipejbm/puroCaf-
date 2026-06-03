@@ -20,7 +20,7 @@ const NAV_LINKS = [
   { label: "CURSOS", page: "cursos" },
   { label: "BLOG", page: "blog" },
   { label: "SOBRE", page: "sobre" },
-  { label: "CONTATO", page: "home" },
+  { label: "CONTATO", page: null },
 ];
 
 function LogoSVG() {
@@ -101,7 +101,8 @@ export default function Navbar({ currentPage, onNavigate }) {
           {NAV_LINKS.map(({ label, page }) => (
             <Button
               key={label}
-              onClick={() => onNavigate(page)}
+              onClick={() => page && onNavigate(page)}
+              disabled={!page}
               sx={{
                 color:
                   currentPage === page ? "#C4922A" : "rgba(245,237,214,0.8)",
@@ -111,7 +112,11 @@ export default function Navbar({ currentPage, onNavigate }) {
                 minWidth: 0,
                 px: 0,
                 py: 0,
-                "&:hover": { color: "#F5EDD6", bgcolor: "transparent" },
+                cursor: page ? "pointer" : "default",
+                "&:hover": {
+                  color: page ? "#F5EDD6" : "rgba(245,237,214,0.8)",
+                  bgcolor: "transparent",
+                },
                 transition: "color 0.2s",
               }}
             >

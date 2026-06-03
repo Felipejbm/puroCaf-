@@ -1,29 +1,29 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
   palette: {
-    mode: 'light',
+    mode: "light",
     primary: {
-      main: '#8B4513',
-      light: '#C4922A',
-      dark: '#5C3317',
-      contrastText: '#FAF6EE',
+      main: "#8B4513",
+      light: "#C4922A",
+      dark: "#5C3317",
+      contrastText: "#FAF6EE",
     },
     secondary: {
-      main: '#C4922A',
-      light: '#F5EDD6',
-      dark: '#2C1A0E',
-      contrastText: '#FAF6EE',
+      main: "#C4922A",
+      light: "#F5EDD6",
+      dark: "#2C1A0E",
+      contrastText: "#FAF6EE",
     },
     background: {
-      default: '#FAF6EE',
-      paper: '#FFFFFF',
+      default: "#FAF6EE",
+      paper: "#FFFFFF",
     },
     text: {
-      primary: '#1A0F07',
-      secondary: '#7A5C3A',
+      primary: "#1A0F07",
+      secondary: "#7A5C3A",
     },
-    divider: 'rgba(180,140,90,0.15)',
+    divider: "rgba(180,140,90,0.15)",
   },
   typography: {
     fontFamily: '"Lato", sans-serif',
@@ -54,12 +54,12 @@ export const theme = createTheme({
     button: {
       fontFamily: '"Lato", sans-serif',
       fontWeight: 700,
-      letterSpacing: '1.5px',
+      letterSpacing: "1.5px",
     },
     overline: {
       fontFamily: '"Lato", sans-serif',
       fontWeight: 700,
-      letterSpacing: '2px',
+      letterSpacing: "2px",
     },
   },
   shape: {
@@ -70,16 +70,16 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 0,
-          textTransform: 'uppercase',
-          letterSpacing: '1.5px',
+          textTransform: "uppercase",
+          letterSpacing: "1.5px",
           fontWeight: 700,
-          fontSize: '11px',
-          boxShadow: 'none',
-          '&:hover': { boxShadow: 'none' },
+          fontSize: "11px",
+          boxShadow: "none",
+          "&:hover": { boxShadow: "none" },
         },
         contained: {
-          '&:hover': { transform: 'translateY(-1px)' },
-          transition: 'all 0.2s ease',
+          "&:hover": { transform: "translateY(-1px)" },
+          transition: "all 0.2s ease",
         },
       },
     },
@@ -87,12 +87,12 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 0,
-          boxShadow: 'none',
-          border: '1px solid rgba(180,140,90,0.15)',
-          transition: 'transform 0.2s, box-shadow 0.2s',
-          '&:hover': {
-            transform: 'translateY(-3px)',
-            boxShadow: '0 12px 40px rgba(90,40,10,0.13)',
+          boxShadow: "none",
+          border: "1px solid rgba(180,140,90,0.15)",
+          transition: "transform 0.2s, box-shadow 0.2s",
+          "&:hover": {
+            transform: "translateY(-3px)",
+            boxShadow: "0 12px 40px rgba(90,40,10,0.13)",
           },
         },
       },
@@ -105,7 +105,7 @@ export const theme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         root: { borderRadius: 0 },
-        notchedOutline: { borderColor: 'rgba(140,90,40,0.25)' },
+        notchedOutline: { borderColor: "rgba(140,90,40,0.25)" },
       },
     },
     MuiDrawer: {
@@ -125,7 +125,7 @@ export const theme = createTheme({
     },
     MuiDivider: {
       styleOverrides: {
-        root: { borderColor: 'rgba(180,140,90,0.15)' },
+        root: { borderColor: "rgba(180,140,90,0.15)" },
       },
     },
   },
