@@ -13,15 +13,6 @@ const NAV_COLS = [
       { label: "Comentários", page: "testimonios" },
     ],
   },
-  {
-    title: "Social",
-    links: [
-      { label: "Instagram", page: 1 },
-      { label: "Facebook", page: 1 },
-      { label: "YouTube", page: 1 },
-      { label: "Pinterest", page: 1 },
-    ],
-  },
 ];
 
 function LogoSVG() {
