@@ -1,4 +1,4 @@
-# Link do site na web: [text](https://puro-caf.vercel.app/)
+# Link do site na web: [Link do site](https://puro-caf.vercel.app/)
 
 # ☕ Cafeteria Artesanal — React + MUI
 
